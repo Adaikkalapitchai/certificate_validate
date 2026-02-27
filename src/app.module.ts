@@ -9,7 +9,7 @@ import { CertificateModule } from './certificate.module';
     CertificateModule,
     TypeOrmModule.forRoot({
       type: 'mysql',                 // Database type
-      host: 'localhost',             // Database host
+      host: '192.168.1.100',             // Database host
       port: 3306,                     // Database port
       username: 'root',               // DB username
       password: '',                   // DB password
