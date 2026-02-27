@@ -4,13 +4,14 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for Angular frontend
   app.enableCors({
-    origin: 'https://deepakcertificatevaidatesystem.netlify.app', // <-- Angular URL
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: [
+      'https://deepak-apps.netlify.app'
+    ],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
 
-  await app.listen(3000, '0.0.0.0');
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
