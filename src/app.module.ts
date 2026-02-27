@@ -11,11 +11,11 @@ import { CertificateModule } from './certificate.module';
       type: 'mysql',                 // Database type
       host: '127.0.0.1',             // Database host
       port: 3306,                     // Database port
-      username: 'deepak',               // DB username
+      username: 'root',               // DB username
       password: '',                   // DB password
       database: 'certificat_validation', // Database name
       autoLoadEntities: true,         // Automatically load entities
-      synchronize: false,              // Auto-create tables (use false in production)
+      synchronize: true,              // Auto-create tables (use false in production)
     }),
   ],
   controllers: [AppController],
