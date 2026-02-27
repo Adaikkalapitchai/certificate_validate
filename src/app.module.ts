@@ -16,7 +16,7 @@ import { CertificateModule } from './certificate.module';
       database: 'certificat_validation', // Database name
       autoLoadEntities: true,         // Automatically load entities
       synchronize: true, 
-      ssl: { rejectUnauthorized: true }             // Auto-create tables (use false in production)
+      ssl: false             // Auto-create tables (use false in production)
     }),
   ],
   controllers: [AppController],
