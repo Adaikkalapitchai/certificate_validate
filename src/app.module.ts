@@ -12,7 +12,7 @@ import { CertificateModule } from './certificate.module';
       host: 'mysql.railway.internal',             // Database host
       port: 3306,                     // Database port
       username: 'root',               // DB username
-      password: 'Alan@root',                   // DB password
+      password: 'LUngqUgpyLXyxBdpppxqWPjeMYkruCCj',                   // DB password
       database: 'railway', // Database name
       autoLoadEntities: true,         // Automatically load entities
       synchronize: true, 
