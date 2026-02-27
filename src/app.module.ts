@@ -3,23 +3,26 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CertificateModule } from './certificate.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
     CertificateModule,
-    TypeOrmModule.forRoot({
-      type: 'mysql',                 // Database type
-      host: 'mysql.railway.internal',             // Database host
-      port: 3306,                     // Database port
-      username: 'root',               // DB username
-      password: 'LUngqUgpyLXyxBdpppxqWPjeMYkruCCj',                   // DB password
-      database: 'railway', // Database name
-      autoLoadEntities: true,         // Automatically load entities
-      synchronize: true, 
-      ssl: false             // Auto-create tables (use false in production)
+      ConfigModule.forRoot({
+      isGlobal: true,
     }),
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: process.env.MYSQLHOST,
+      port: Number(process.env.MYSQLPORT),
+      username: process.env.MYSQLUSER,
+      password: process.env.MYSQLPASSWORD,
+      database: process.env.MYSQLDATABASE,
+      autoLoadEntities: true,
+      synchronize: true,
+    })
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
