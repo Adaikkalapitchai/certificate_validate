@@ -9,10 +9,10 @@ import { CertificateModule } from './certificate.module';
     CertificateModule,
     TypeOrmModule.forRoot({
       type: 'mysql',                 // Database type
-      host: '192.168.1.100',             // Database host
+      host: 'certificate',             // Database host
       port: 3306,                     // Database port
-      username: 'root',               // DB username
-      password: '',                   // DB password
+      username: 'deepak',               // DB username
+      password: 'Alan@1234',                   // DB password
       database: 'certificat_validation', // Database name
       autoLoadEntities: true,         // Automatically load entities
       synchronize: true, 
