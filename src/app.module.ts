@@ -27,4 +27,3 @@ import { CertificateService } from './certificate.service';
   providers: [ AppService],
 })
 export class AppModule { }
-console.log('MYSQLDATABASE:', process.env.MYSQLDATABASE);

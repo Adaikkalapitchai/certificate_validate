@@ -19,4 +19,7 @@ export class Certificate {
 
   @Column({ unique: true })
   verificationCode: string;
+
+  @Column({nullable: true})
+  filePath: string;
 }
