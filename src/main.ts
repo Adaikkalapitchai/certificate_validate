@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useStaticAssets(join(__dirname, '..', 'uploads'), { prefix: '/uploads' });
   app.enableCors({
-    origin: ['https://deepak-apps.netlify.app'], // allow your frontends
+    origin: ['https://charming-klepon-faf384.netlify.app'], // allow your frontends
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
