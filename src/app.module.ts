@@ -4,10 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CertificateModule } from './certificate.module';
 import { ConfigModule } from '@nestjs/config';
+import { CertificateService } from './certificate.service';
 
 @Module({
   imports: [
-    CertificateModule,
       ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -20,9 +20,11 @@ import { ConfigModule } from '@nestjs/config';
       database: process.env.MYSQLDATABASE,
       autoLoadEntities: true,
       synchronize: true,
-    })
+    }),
+    CertificateModule
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, ],
+  providers: [ AppService],
 })
 export class AppModule { }
+console.log('MYSQLDATABASE:', process.env.MYSQLDATABASE);
